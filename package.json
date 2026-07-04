@@ -1,0 +1,29 @@
+{
+  "name": "opn-testnet-hardhat-demo",
+  "version": "1.0.0",
+  "description": "A simple Solidity and Hardhat demo project for OPN Chain testnet.",
+  "main": "hardhat.config.js",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "deploy:opn": "hardhat run scripts/deploy.js --network opnTestnet"
+  },
+  "keywords": [
+    "opn",
+    "iopn",
+    "opn-chain",
+    "opn-testnet",
+    "solidity",
+    "hardhat",
+    "evm",
+    "web3",
+    "smart-contract"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "dotenv": "^16.4.5",
+    "hardhat": "^2.22.0"
+  }
+}
