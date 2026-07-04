@@ -1,7 +1,8 @@
 require("@nomicfoundation/hardhat-toolbox");
 require("dotenv").config();
 
-const PRIVATE_KEY = process.env.PRIVATE_KEY || "";
+const rawPrivateKey = process.env.PRIVATE_KEY || "";
+const isValidPrivateKey = /^0x[a-fA-F0-9]{64}$/.test(rawPrivateKey);
 
 module.exports = {
   solidity: "0.8.24",
@@ -9,7 +10,7 @@ module.exports = {
     opnTestnet: {
       url: "https://testnet-rpc.iopn.tech",
       chainId: 984,
-      accounts: PRIVATE_KEY !== "" ? [PRIVATE_KEY] : []
+      accounts: isValidPrivateKey ? [rawPrivateKey] : []
     }
   }
 };
